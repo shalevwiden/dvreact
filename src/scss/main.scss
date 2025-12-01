@@ -1,5 +1,7 @@
 @use "../scss/utils/mixins" as *;
 @use "utils/imports" as *;
+@use "../scss/utils/animations" as *;
+@use "../scss/utils/variables" as *;
 
 // should I include everything from here
 body {

@@ -1,0 +1,82 @@
+@use "../../../scss/utils/mixins" as *;
+
+.abovemainsite {
+  @include flexcol;
+  justify-content: flex-start;
+  gap: 0;
+  width: 100%;
+  height: 600px !important;
+
+  .topnav {
+    /* change this color to see it and make changes */
+
+    background-color: #dce2e6;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* keep this */
+    filter: drop-shadow(4px 0px 2px rgb(67, 66, 66));
+  }
+  .hero {
+    @include flexrow;
+    border: 3px solid red !important;
+
+    .lefthero {
+      @include flexcol;
+      align-items: flex-start;
+      flex: 1;
+      padding: 40px;
+
+      h1.heading {
+        font-size: 80px;
+        color: navy;
+        font-family: "Barlow", Serif;
+        font-weight: 600;
+      }
+      p.subheading {
+        font-family: Hind Vadodara, sans-serif;
+        color: #887d7d;
+      }
+      & button.cta {
+        width: 100px;
+        height: 70px;
+        color: #fff;
+        background-color: blue;
+      }
+    }
+    .righthero {
+      @include flexcol;
+      @include blackborder;
+      background-color: var(--lighterblue);
+      height: 100%;
+      align-items: flex-start;
+      flex: 1;
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1135px) {
+    .abovemainsite {
+      display: flex;
+      flex-direction: column;
+      height: 800px;
+
+      .topnav {
+        background-color: #dce2e6;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
