@@ -1,0 +1,11 @@
+@use "../scss/utils/mixins" as *;
+@use "utils/imports" as *;
+
+// should I include everything from here
+body {
+  // this is from utils folder
+  @include bodyStyling;
+
+  //   green border
+  @include border(green);
+}

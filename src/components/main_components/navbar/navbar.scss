@@ -1,0 +1,7 @@
+@use "../../../scss/utils/mixins" as *;
+
+.navbar {
+  width: 500px;
+  @include flexrow;
+  @include border(#404be5);
+}

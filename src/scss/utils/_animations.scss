@@ -1,0 +1,147 @@
+// all animations will go here
+// At least until I can figure out
+:root {
+  // positive values move down, negative move up
+  --flyingy: -1340px;
+  --flyingymobile: -2190px;
+}
+@keyframes blurbify_animation {
+  0% {
+    border-color: red;
+    background-color: #fff;
+    transform: scale(1);
+  }
+
+  50% {
+    border-color: blue;
+    background-color: #eee;
+    transform: scale(1.3);
+  }
+  70% {
+    border-color: rgb(255, 0, 230);
+    background-color: #fff;
+  }
+  100% {
+    border-color: red;
+    background-color: #fff;
+    transform: scale(1);
+  }
+}
+
+@keyframes blurbify_bg_animations {
+  0% {
+    background-color: rgba(60, 125, 60, 1);
+  }
+
+  50% {
+    background-color: #085788ff;
+  }
+  70% {
+    background-color: rgba(223, 103, 56, 1);
+  }
+  70% {
+    background-color: rgba(223, 56, 148, 1);
+  }
+  90% {
+    background-color: rgba(220, 112, 30, 1);
+  }
+  100% {
+    background-color: rgba(60, 125, 60, 1);
+  }
+}
+@keyframes flyingobject {
+  0% {
+    transform: translateX(-50vw) translateY(var(--flyingy));
+  }
+
+  50% {
+    transform: translateX(8vw) translateY(calc(var(--flyingy) + 50px));
+  }
+
+  100% {
+    transform: translateX(63vw) translateY(calc(var(--flyingy) - 10px));
+  }
+}
+
+@keyframes flyingobject_mobile {
+  0% {
+    transform: translateX(-50vw) translateY(var(--flyingymobile));
+  }
+
+  50% {
+    transform: translateX(8vw) translateY(calc(var(--flyingymobile) + 50px));
+  }
+
+  100% {
+    transform: translateX(63vw) translateY(calc(var(--flyingymobile) - 10px));
+  }
+}
+
+@keyframes spin {
+  // this is for the blurb
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  40% {
+    transform: scale(1.3) rotate(360deg);
+  }
+
+  65% {
+    transform: scale(1.3) rotate(360deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes spin_lin {
+  // this for pfp
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(0.5) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.3) rotate(360deg);
+  }
+
+  92% {
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+// now define all the actual classes
+
+.blurbify_class {
+  animation: blurbify_animation 5s normal infinite;
+}
+
+.div_background_class {
+  animation: blurbify_bg_animations 10s linear infinite;
+
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.3); /* translucent look */
+}
+.flying_class {
+  display: block !important;
+  animation: flyingobject 5s normal linear infinite;
+
+  // for mobile theres a diferent animation class
+  @media (max-width: 400px) {
+    animation: flyingobject_mobile 5s linear infinite;
+  }
+}
+
+.spin_class {
+  // for entire blurb
+  animation: spin_lin 5s ease;
+  animation-delay: 2s;
+}

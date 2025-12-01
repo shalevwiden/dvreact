@@ -1,0 +1,22 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, /* 0 = outline, 1 = filled */ "wght" 400,
+    /* 100–700 */ "GRAD" 0, /* -50 to 200 */ "opsz" 24; /* optical size */
+  font-size: 36px;
+  transition: all 0.3s ease;
+}
+
+@keyframes heart-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.heart-filled {
+  font-weight: 600 !important;
+  animation: heart-click 0.5s ease forwards;
+}
